@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffe4ed">
+<title>I'm Sorry, Sneha 🐱💗</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #ffe0eb, #f9d8ff, #fff0f5);
+  color: #74334e;
+  overflow-x: hidden;
+}
+
+.card {
+  width: 100%;
+  max-width: 440px;
+  text-align: center;
+  background: rgba(255,255,255,0.92);
+  border: 2px solid white;
+  border-radius: 28px;
+  padding: 26px 20px;
+  box-shadow: 0 12px 40px #d77ca444;
+  position: relative;
+  z-index: 2;
+  animation: appear 1s ease;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  font-size: clamp(28px, 8vw, 38px);
+  color: #e64e87;
+  margin: 12px 0;
+}
+
+h2 {
+  font-size: 21px;
+  margin: 14px 0;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 12px 0;
+}
+
+.gif {
+  width: 210px;
+  max-width: 85%;
+  height: 190px;
+  object-fit: contain;
+  border-radius: 18px;
+  margin: 12px auto;
+  display: block;
+}
+
+.heart {
+  font-size: 45px;
+  animation: beat 1s infinite;
+}
+
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.18); }
+}
+
+button {
+  border: none;
+  border-radius: 30px;
+  padding: 14px 20px;
+  margin: 10px 4px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: inherit;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(135deg, #ff6397, #dc4bc3);
+  box-shadow: 0 5px 14px #e64e8744;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+#message {
+  display: none;
+  background: #fff0f6;
+  border-radius: 18px;
+  padding: 16px;
+  margin-top: 15px;
+  animation: appear 0.6s ease;
+}
+
+.floating {
+  position: fixed;
+  bottom: -40px;
+  pointer-events: none;
+  z-index: 5;
+  animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-115vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.footer {
+  font-size: 12px;
+  color: #ad7790;
+  margin-top: 18px;
+}
+</style>
+</head>
+
+<body>
+
+<main class="card">
+
+  <div class="heart">🐱💗</div>
+
+  <h1>I'm Sorry, Sneha!</h1>
+  <h2>🥺 Please don't be upset with me!</h2>
+
+
+  <img src="C:\Users\vansh\OneDrive\Desktop\photo_2026-10-13_10-53-45.jpg" width="40%" height="40%">
+
+
+  <p>Hey Sneha ❤️</p><br>
+
+  <p>
+    I'm really sorry, I hurt you and made you upset.
+    🥺💗
+  </p>
+
+  <p>
+        Mera intention tumhe hurt karna bilkul nahi tha.
+        Tum meri achhi dost ho, aur main nahi chahta ki meri wajah se
+        tum upset ho. 🫶🏻  </p>
+
+  <p>
+    You're a really good friend, Sneha, and
+    our friendship means a lot to me. 🌷
+  </p>
+
+  <h2>Can you forgive me, please? 🥹</h2>
+
+  
+
+  <button onclick="showMessage()">
+    Tap for a little surprise 💌
+  </button>
+
+  <div id="message">
+
+    <div style="font-size:70px">🐱🥺💐</div>
+
+    <h2>Sorry, Sneha! 💗</h2>
+
+    <p>
+       "Please forgive me!" 🐾🌸
+    </p>
+
+    <p>
+      I don't expect you to forget how you feel.
+      I just hope we can talk and make things right.
+      🫂
+    </p>
+    <p> Please gussa thoda kam kar do na 😭👉🏻👈🏻 🐱 <br></p>
+    <h2>Friends again? 🥹💕</h2>
+
+    <div style="font-size:36px">🐈 💗 🐈‍⬛</div>
+  </div>
+
+  <button onclick="makeHearts()">
+    Click to beat me
+  </button>
+
+  <div class="footer">
+    A little apology, a little cat, and lots of friendship 💖
+  </div>
+
+</main>
+
+<script>
+function showMessage() {
+  document.getElementById("message").style.display = "block";
+  document.getElementById("message").scrollIntoView({
+    behavior: "smooth",
+    block: "nearest"
+  });
+  makeHearts();
+}
+
+function makeHearts() {
+  const symbols = ["💗", "💖", "💕", "🐱", "🐾", "🌸", "🫶"];
+
+  for (let i = 0; i < 22; i++) {
+    const item = document.createElement("div");
+    item.className = "floating";
+    item.textContent =
+      symbols[Math.floor(Math.random() * symbols.length)];
+
+    item.style.left = Math.random() * 100 + "vw";
+    item.style.fontSize = (20 + Math.random() * 22) + "px";
+    item.style.animationDuration = (3 + Math.random() * 4) + "s";
+
+    document.body.appendChild(item);
+
+    setTimeout(() => item.remove(), 7500);
+  }
+}
+
+window.addEventListener("load", () => {
+  setTimeout(makeHearts, 500);
+});
+</script>
+
+</body>
+</html>
